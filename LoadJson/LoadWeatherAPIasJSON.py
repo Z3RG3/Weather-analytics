@@ -1,6 +1,5 @@
 import os
 import json
-import time
 import argparse
 import weatherapi  # type: ignore the package was installed to the .venv
 from weatherapi.rest import ApiException  # type: ignore
@@ -34,7 +33,10 @@ def configure_api(api_key: str) -> weatherapi.Configuration:
 
 
 def fetch_forecast(
-    api_instance: weatherapi.APIsApi, query: str, days: int, dt: str | None = None
+    api_instance: weatherapi.APIsApi,
+    query: str,
+    days: int,
+    dt: str | None = None,  # type: ignore
 ) -> dict | None:
     """Fetches forecast data from the WeatherAPI."""
     try:
