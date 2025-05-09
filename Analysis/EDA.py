@@ -1,6 +1,10 @@
 import pandas as pd
 import numpy as np
+import seaborn as sns
+import matplotlib.pyplot as plt
 import json
+# simd json for huge 5Gb< files
+# Pandoc   a universal document converter
 
 # df = pd.read_json("../Data/api_response2025-04-17.json")  the json file is not flat
 
@@ -25,6 +29,11 @@ dfx["will_it_rain"] = dfx["will_it_rain"].astype(bool)
 dfx["is_day"] = dfx["is_day"].astype(bool)
 dfx["wind_dir"] = dfx["wind_dir"].astype(str)
 
+# Data Cleaning: it was pretty immaculate because its a weatherAPi which have to provide good quality data,
+# I know its now typical in reallife scenarios, but enough for this little proj.
+# DataWrangler was used to deal with missing data, set up variable types (especially Date)
+# we're mostly working with numerical (continuous, discrete) and two categorical (datetime = 'yyyymmdd hh'; condition)
+
 # Drop redundant columns
 dfx = dfx.drop(
     columns=[
@@ -46,7 +55,19 @@ dfx = dfx.drop(
     ]
 )
 
-# Display the DataFrame
-print(dfx.head())
+# Checking the whole the DataFrame
+dfx.head()
+dfx.info()
+dfx.describe()  # <–– byfar the best built-in func
 
 # * EDA
+# TODO - These are the top EDA libs:  pandas-profiling, SweetViz, lux and HiPlot
+# In my opinion they are pretty powerful, for me they work perfectly as a starting-point to decide where to go next,
+#  but of course that's what EDA is for!
+
+dfx_num = dfx.select_dtypes(include=["float64", "int64"])
+dfx_num.hist()
+
+sns.distplot(dfx["humidity"], color="g", bins=100, hist_kws={"alpha": 0.4})
+
+# Time series
