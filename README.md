@@ -1,7 +1,7 @@
 # 🚲 Weather Analytics for Optimal Biking
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/Z3RG3/Weather-analytics/main/assets/banner.png" alt="Weather Analytics Banner" width="800">
+  <img src="https://www.invent.ai/hubfs/weather-article-banner-2.png" alt="Weather Analytics Banner" width="800">
   
   ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
   ![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)
