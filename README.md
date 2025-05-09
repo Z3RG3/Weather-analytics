@@ -1,7 +1,7 @@
-# 🚲 Weather Analytics for Optimal Biking
+# 🚲 Weather Analytics for Optimal Motoriking
 
 <div align="center">
-  <img src="[https://raw.githubusercontent.com/Z3RG3/Weather-analytics/main/assets/banner.png](https://www.invent.ai/blog/how-weather-data-improves-retail-demand-forecasting)" alt="Weather Analytics Banner" width="800">
+  <img src="[https://www.invent.ai/blog/how-weather-data-improves-retail-demand-forecasting]" alt="Weather Analytics Banner" width="800">
   
   ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
   ![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)
@@ -161,13 +161,10 @@ This project demonstrates:
 
 While this is primarily a personal portfolio project, suggestions and improvements are welcome! Feel free to open an issue or submit a pull request.
 
-## 📄 License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
 
 ## 👨‍💻 About the Author
 
-I'm an aspiring data scientist passionate about creating practical applications that solve everyday problems. This project combines my love for biking with my interest in data analysis and weather patterns.
+I'm an aspiring data scientist passionate about creating practical applications that solve everyday problems. This project combines my love for motorbiking and regular biking with my interest in data analysis and weather patterns.
 
 ---
 
