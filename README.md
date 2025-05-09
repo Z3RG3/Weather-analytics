@@ -1,4 +1,4 @@
-# 🚲 Weather Analytics for Optimal Biking
+# 🏍️🚲 Weather Analytics for Optimal Biking
 
 <div align="center">
   <img src="https://www.invent.ai/hubfs/weather-article-banner-2.png" alt="Weather Analytics Banner" width="800">
