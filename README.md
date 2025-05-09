@@ -1,8 +1,6 @@
 # 🚲 Weather Analytics for Optimal Motoriking
-
+![Weather Analytics](https://www.invent.ai/blog/how-weather-data-improves-retail-demand-forecasting)
 <div align="center">
-  <img src="[https://www.invent.ai/blog/how-weather-data-improves-retail-demand-forecasting]" alt="Weather Analytics Banner" width="800">
-  
   ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
   ![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)
   ![Matplotlib](https://img.shields.io/badge/Matplotlib-3776AB?style=for-the-badge&logo=matplotlib&logoColor=white)
