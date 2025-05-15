@@ -80,8 +80,30 @@ for i in range(0, len(dfx_num.columns), 5):
 # *pandas-profiling     ; these ones maybe an other time SweetViz, lux and HiPlot
 profile = ProfileReport(dfx, title="Biking profile")
 profile.to_notebook_iframe()
-profile.to_file("biking_profile.html")
 
-profile = ProfileReport(dfx, tsmode=True, sortby="Date Local")
-profile.to_file("profile_report.html")
 # Time series
+profile_ts = ProfileReport(dfx, tsmode=True)
+profile_ts.to_notebook_iframe()
+profile_ts.to_file("biking_timeseriesEDA.html")
+
+# Plot temperature over time
+dfx["temp_c"].plot(figsize=(15, 5), title="Temperature Over Time")
+plt.show()
+
+
+# Forecasting (Example with Prophet)
+from prophet import Prophet
+
+# Prepare data for Prophet (requires 'ds' and 'y' columns)
+prophet_df = dfx["temp_c"].reset_index()
+prophet_df.columns = ["ds", "y"]
+
+# Fit model
+model = Prophet(daily_seasonality=True)
+model.fit(prophet_df)
+
+# Forecast next 24 hours
+future = model.make_future_dataframe(periods=24, freq="H")
+forecast = model.predict(future)
+model.plot(forecast)
+plt.show()
