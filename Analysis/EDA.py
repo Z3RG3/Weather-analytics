@@ -3,6 +3,8 @@ import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
 import json
+from ydata_profiling import ProfileReport
+
 # simd json for huge 5Gb< files
 # Pandoc   a universal document converter
 
@@ -64,10 +66,22 @@ dfx.describe()  # <–– byfar the best built-in func
 # TODO - These are the top EDA libs:  pandas-profiling, SweetViz, lux and HiPlot
 # In my opinion they are pretty powerful, for me they work perfectly as a starting-point to decide where to go next,
 #  but of course that's what EDA is for!
+# resources: https://www.kaggle.com/code/ekami66/detailed-exploratory-data-analysis-with-python/comments ; https://shopify.engineering/conducting-exploratory-data-analysis ;
+# https://www.kaggle.com/code/kashnitsky/topic-1-exploratory-data-analysis-with-pandas ; http://www.feat.engineering/index.html
 
 dfx_num = dfx.select_dtypes(include=["float64", "int64"])
-dfx_num.hist()
+dfx_num.hist(figsize=(16, 20), bins=50, xlabelsize=8, ylabelsize=8)
 
 sns.distplot(dfx["humidity"], color="g", bins=100, hist_kws={"alpha": 0.4})
 
+for i in range(0, len(dfx_num.columns), 5):
+    sns.pairplot(data=dfx_num, x_vars=dfx_num.columns[i : i + 5], y_vars=["humidity"])
+
+# *pandas-profiling     ; these ones maybe an other time SweetViz, lux and HiPlot
+profile = ProfileReport(dfx, title="Biking profile")
+profile.to_notebook_iframe()
+profile.to_file("biking_profile.html")
+
+profile = ProfileReport(dfx, tsmode=True, sortby="Date Local")
+profile.to_file("profile_report.html")
 # Time series

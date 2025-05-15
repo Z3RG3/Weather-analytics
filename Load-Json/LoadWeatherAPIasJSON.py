@@ -1,7 +1,7 @@
 import os
 import json
 import argparse
-import weatherapi  # type: ignore the package was installed to the .venv
+import weatherapi
 from weatherapi.rest import ApiException  # type: ignore
 from pprint import pprint
 from datetime import datetime, timedelta
@@ -52,7 +52,7 @@ def fetch_forecast(
             api_response = api_instance.forecast_weather(query, days)
 
         logging.info(f"Successfully fetched forecast data for '{query}'.")
-        return api_response
+        return api_response  # type: ignore
     except ApiException as e:
         logging.error(f"API Exception when calling forecast_weather for '{query}': {e}")
         return None
